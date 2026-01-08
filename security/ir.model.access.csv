@@ -1,0 +1,3 @@
+
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_oryx_scan_event_user","access.oryx.scan.event.user","model_oryx_scan_event","base.group_user",1,1,1,0

@@ -1,0 +1,54 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_oryx_scan_event_tree" model="ir.ui.view">
+        <field name="name">oryx.scan.event.tree</field>
+        <field name="model">oryx.scan.event</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="timestamp"/>
+                <field name="scan_type"/>
+                <field name="lot_id"/>
+                <field name="operation_id"/>
+                <field name="gps_lat"/>
+                <field name="gps_lon"/>
+                <field name="source_location_id"/>
+                <field name="dest_location_id"/>
+                <field name="remarks"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_oryx_scan_event_form" model="ir.ui.view">
+        <field name="name">oryx.scan.event.form</field>
+        <field name="model">oryx.scan.event</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="lot_id"/>
+                        <field name="scan_type"/>
+                        <field name="timestamp"/>
+                        <field name="operation_id"/>
+                    </group>
+                    <group>
+                        <field name="gps_lat"/>
+                        <field name="gps_lon"/>
+                        <field name="source_location_id"/>
+                        <field name="dest_location_id"/>
+                    </group>
+                    <group>
+                        <field name="remarks"/>
+                        <field name="delay_flag"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_oryx_scan_event" model="ir.actions.act_window">
+        <field name="name">Scan Events</field>
+        <field name="res_model">oryx.scan.event</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

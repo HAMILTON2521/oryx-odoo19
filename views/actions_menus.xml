@@ -1,0 +1,6 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_oryx_root" name="Oryx Tracking" sequence="10"/>
+    <menuitem id="menu_oryx_events" name="Scan Events" parent="menu_oryx_root" action="action_oryx_scan_event"/>
+</odoo>
