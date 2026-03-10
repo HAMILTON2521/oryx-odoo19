@@ -11,24 +11,26 @@
     />
 
     <template id="cylinder_label">
-        <t t-call="web.external_layout">
-            <div class="page">
-                <t t-foreach="docs" t-as="lot">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="lot">
+                <t t-call="web.external_layout">
+                    <div class="page">
                     <div style="border:1px solid #ccc; padding:8px; margin-bottom:6px; width:260px;">
                         <t t-set="code" t-value="lot.barcode_value or lot.name"/>
                         <t t-set="qr" t-value="lot.qr_code_data or ('https://example.com/lot/%s' % lot.id)"/>
                         <p><strong><t t-esc="lot.name"/></strong></p>
                         <div>
                             <span>Code128:</span>
-                            <barcode value="code" type="Code128"/>
+                            <img t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', code, 600, 100)" alt="Barcode"/>
                         </div>
                         <div>
                             <span>QR:</span>
-                            <barcode value="qr" type="QR"/>
+                            <img t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', qr, 180, 180)" alt="QR Code"/>
                         </div>
                     </div>
+                    </div>
                 </t>
-            </div>
+            </t>
         </t>
     </template>
 </odoo>
